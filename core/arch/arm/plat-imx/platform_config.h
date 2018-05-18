@@ -119,12 +119,17 @@
 #if defined(PLATFORM_FLAVOR_mx6dlsabresd)
 #define CONSOLE_UART_BASE		UART1_BASE
 #endif
+#if defined(PLATFORM_FLAVOR_mx6qsabreauto)
+#define CONSOLE_UART_BASE		UART4_BASE
+#endif
 
 /* Board specific RAM size */
 #if defined(PLATFORM_FLAVOR_mx6qsabrelite) || \
 	defined(PLATFORM_FLAVOR_mx6qsabresd) || \
 	defined(PLATFORM_FLAVOR_mx6dlsabresd)
 #define DRAM0_SIZE			0x40000000
+#elif defined(PLATFORM_FLAVOR_mx6qsabreauto)
+#define DRAM0_SIZE			0x80000000
 #endif
 
 /* Core number depends of SoC version. */
